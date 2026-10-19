@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.demo.model.book;
 import com.example.demo.service.BookService;
 
+import io.swagger.v3.oas.annotations.Operation;
 import jakarta.validation.Valid;
 
 import java.util.List;
@@ -47,6 +48,15 @@ public class BookController {
 	    @PatchMapping("/updateBook")
 	    public String updateBook(@RequestBody book book) { 
 	    	return ("book updated successfully") ; 
+	    }
+	    
+	    @GetMapping ("/hello")
+	    @Operation(
+	            summary = "Get a greeting",
+	            description = "Returns a welcome message"
+	        )
+	    public String Hello () { 
+	    	return ("Hello") ; 
 	    }
 	    
 	
